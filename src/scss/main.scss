@@ -1,0 +1,22 @@
+$body-color:red;
+
+*{
+  margin: 0;
+  padding: 0;
+body{
+  box-sizing: border-box;
+
+   section{
+    display: flex;
+    flex-direction: row;
+    width: 1440px;
+    height: 940px;
+    background-color: $body-color;
+    }
+
+ 
+
+}
+}
+
+
