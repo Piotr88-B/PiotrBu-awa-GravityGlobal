@@ -96,17 +96,23 @@ body, html{
     }
 
       .model__popup{ 
+        display: flex;
       position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      align-items: center;
       width: 100%;
       height: 100%;
       z-index: 10;
-      align-items: center;
       transform:scale(0);
-      
+      transition: 0.5s;
+
           .container__popup{
           display: flex;
-          flex-direction: column;
-          justify-content: center;
+          flex-direction: row;
+          flex-wrap: wrap;
           width: 920px;
           height: 210px;
           color: #121212;
@@ -114,38 +120,60 @@ body, html{
           border-radius: 5px;
           background: #FFFFFF;
           margin-left: auto;
-          margin-right: auto;
-          gap: 24px;
-
-          span{
+          margin-right: auto;         
+          padding: 10px;
+          
+         
+            span{
+              display: flex;
             opacity: 1;
-            padding: 10px;
-             
+            padding: 10px; 
             width: 12px;
+            flex-basis: 100%;
+            order: 1;
             height: 12px;
             font-size: 24px;  
+            justify-content: flex-end;
             cursor: pointer;
+             align-items: center;
           }
           h2{
+          display: flex;
           opacity: 1;
           max-width: 320px;
           height: 50px;
+          flex-basis: 100%;
           margin-left: auto;
           margin-right: auto;
           font-family: 'Roboto';
           font-style: normal;
           font-weight: 700;
           font-size: 42px; 
+          justify-content: center;
+          order: 2;
+         
           }
         
           p{
+            display: flex;
+          flex-basis: 100%;
           max-width: 920px;
           height: 24px;
-          margin-left: auto;
-          margin-right: auto;
+          justify-content: center;
+          order: 3;
+         
           }
           .restart__Button{
             display: none;
+            width: 128px;
+            height: 48px;
+            background: $button-color;
+            border-radius: 32px;
+            border:none;
+            text-align: center;
+            order: 4;
+            color: #FFFFFF;
+            cursor: pointer;
           }
         }
       }
@@ -164,11 +192,12 @@ body, html{
       bottom: 0;
       background-color: rgba(0, 0, 0, 0.5);
       pointer-events: none;
-     
+ 
     }
     .overlay.active{
       opacity: 1;
       pointer-events: all;
+     
     }
   } 
 }
