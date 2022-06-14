@@ -8,11 +8,12 @@ const selectCloseButton = document.querySelector('span')
 const selectRestartButton = document.querySelector('.restart__Button')
 
 //counter
-let counterButton = 1;
+ let counterButton = 1;
 
 //function counter + text
 const counter = () => {
-selectModelTextAlert.textContent = `You have click ${counterButton++} times to relate button`
+let counterButton = localStorage.counterButton ++
+selectModelTextAlert.textContent = `You have click ${counterButton} times to relate button`
 
   if (counterButton >= 5) {
    selectRestartButton.style.display = 'block'
@@ -35,7 +36,7 @@ selectModelOverlay.classList.remove('active');
 
 //Reset counter
 const resetCounter = () => {
-  counterButton = 1;
+  localStorage.counterButton = 1;
   selectModelTextAlert.innerText = `You have click ${counterButton} times to relate butto`
   selectRestartButton.style.display = 'none'
 }
